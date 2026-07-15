@@ -4,17 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Surat Untuk Sahabat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #f5f0ea; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
-        .box { background: white; padding: 20px; border: 2px solid #333; max-width: 400px; width: 100%; box-shadow: 5px 5px 0px #333; }
-        img { width: 100%; border: 2px solid #333; margin-top: 15px; margin-bottom: 15px; }
+        body { background-color: #f5f0ea; font-family: 'Courier Prime', monospace; color: #4a3e3d; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+        .box { background: white; padding: 30px; border: 2px solid #4a3e3d; max-width: 430px; width: 100%; box-shadow: 6px 6px 0px #4a3e3d; border-radius: 4px; text-align: center; box-sizing: border-box; }
+        h1 { font-family: 'Playfair Display', serif; font-style: italic; font-size: 24px; margin-bottom: 20px; }
+        img { width: 100%; max-height: 230px; object-fit: cover; border: 2px solid #4a3e3d; padding: 5px; background: #fff; box-shadow: 4px 4px 0px #4a3e3d; margin-bottom: 20px; }
+        p { font-size: 14px; line-height: 1.8; text-align: left; white-space: pre-line; }
+        .btn { background: #e6dfd5; border: 2px solid #4a3e3d; padding: 10px 20px; font-family: 'Courier Prime', monospace; font-weight: bold; cursor: pointer; box-shadow: 3px 3px 0px #4a3e3d; margin: 10px; display: inline-block; }
+        .btn:active { box-shadow: 1px 1px 0px #4a3e3d; transform: translate(2px, 2px); }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <div class="box">
+
+    <!-- HALAMAN 1: INTERAKTIF NOTIFIKASI -->
+    <div id="halaman1" class="box">
+        <h1>[ NOTIFIKASI SISTEM ]</h1>
+        <p style="text-align: center;">Web ini berisi surat kesan & pesan dari Syifa karena kita mau pisah kelas. Beneran kamu orangnya?</p>
+        <button class="btn" onclick="bukaSurat()">Iya, buka suratnya ✨</button>
+        <button class="btn" onclick="alert('Yah... padahal ini khusus buat sahabat aku 🥺')">Bukan...</button>
+    </div>
+
+    <!-- HALAMAN 2: ISI SURAT & FOTO -->
+    <div id="halaman2" class="box hidden">
         <h1>Dear Sahabatku...</h1>
         
-        <!-- GANTI DENGAN LINK FOTO KAMU -->
+        <!-- 📸 GANTI LINK DI BAWAH INI DENGAN LINK FOTO KAMU -->
         <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500" alt="Foto Kenangan">
 
         <p>
@@ -22,10 +38,27 @@
 
         Makasih banyak ya udah mau jadi temen sekelas yang seru selama ini. Banyak banget momen-momen ketawa bareng yang bakal aku kangenin banget.
 
+        <!-- TULIS PESAN KAMU DI SINI SYIF -->
         Meskipun nanti kita udah nggak sekelas lagi, jangan sombong-sombong ya kalau ketemu di koridor sekolah! Tetep sapa aku. 
 
         Keep in touch, ya!
         </p>
     </div>
+
+    <!-- MUSIK LATAR RESTATIK -->
+    <audio id="musik" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function bukaSurat() {
+            document.getElementById('halaman1').classList.add('hidden');
+            document.getElementById('halaman2').classList.remove('hidden');
+            var musik = document.getElementById('musik');
+            musik.play().catch(function(error) {
+                console.log("Musik butuh izin klik untuk diputar otomatis.");
+            });
+        }
+    </script>
 </body>
 </html>
