@@ -30,8 +30,8 @@
     <div id="halaman2" class="box hidden">
         <h1>allenn sayangku cintaku</h1>
         
-        <!-- 📸 FOTO KOLASE ASLI KALIAN -->
-        <img src="https://images2.imgbox.com/fa/22/0tQpPj0B_o.png" alt="Foto Kenangan Syifa dan Allen">
+        <!-- 📸 MEMANGGIL NAMA FOTO PANJANG YANG KAMU COMMIT TADI -->
+        <img src="Yellow Black Cute Y2K Handwritten K-Pop Music Fangirl License ID Card_20260715_225712_0000.png" alt="Foto Kenangan Syifa dan Allen">
 
         <p>
         Hai Allen! Ga kerasa udaa satu tahun kita bersama 🥺🥺
@@ -45,32 +45,28 @@
         </p>
     </div>
 
-    <!-- 🔊 MUSIK: NADIN AMIZAH - MENDARAH -->
+    <!-- 🔊 MUSIK: NADIN AMIZAH - MENDARAH (LINK SERVER BARU ANTI BLOKIR) -->
     <audio id="musik" loop preload="auto">
-        <source src="https://files.catbox.moe/6c853h.mp3" type="audio/mpeg">
+        <source src="https://open.l3n.co/d/mendarah.mp3" type="audio/mpeg">
     </audio>
 
     <script>
         function bukaSurat() {
-            // Berpindah halaman
             document.getElementById('halaman1').classList.add('hidden');
             document.getElementById('halaman2').classList.remove('hidden');
             
-            // Memutar musik Mendarah
             var musik = document.getElementById('musik');
             musik.volume = 0.8;
             
-            var playPromise = musik.play();
-            if (playPromise !== undefined) {
-                playPromise.then(function() {
-                    console.log("Musik Mendarah berhasil diputar!");
-                }).catch(function(error) {
-                    console.log("Browser memblokir autoplay, pasang pemicu klik cadangan.");
-                    document.body.addEventListener('click', function() {
-                        musik.play();
-                    }, { once: true });
-                });
-            }
+            musik.play().then(function() {
+                console.log("Musik Mendarah sukses diputar!");
+            }).catch(function(error) {
+                console.log("Browser memblokir autoplay otomatis.");
+                // Solusi darurat: musik langsung bunyi begitu layar disentuh/diklik sekali lagi
+                document.body.addEventListener('click', function() {
+                    musik.play();
+                }, { once: true });
+            });
         }
     </script>
 </body>
