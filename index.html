@@ -3,152 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Sahabatku</title>
-    <!-- Font Retro Estetik -->
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <title>Surat Untuk Sahabat</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f5f0ea; /* Warna kertas retro hangat */
-            font-family: 'Courier Prime', monospace;
-            color: #4a3e3d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        /* Pop up Gerbang Depan */
-        #overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: #f5f0ea;
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-        .box-retro {
-            background: #ffffff;
-            border: 2px solid #4a3e3d;
-            box-shadow: 4px 4px 0px #4a3e3d;
-            padding: 30px;
-            max-width: 400px;
-            border-radius: 4px;
-        }
-        button {
-            background-color: #e8d8c8;
-            border: 2px solid #4a3e3d;
-            padding: 10px 20px;
-            font-family: 'Courier Prime', monospace;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 2px 2px 0px #4a3e3d;
-            margin: 10px;
-            transition: 0.2s;
-        }
-        button:active {
-            transform: translate(2px, 2px);
-            box-shadow: 0px 0px 0px #4a3e3d;
-        }
-        /* Konten Utama */
-        #main-content {
-            display: none;
-            max-width: 600px;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-        .surat {
-            background: #ffffff;
-            border: 1px solid #d3c4b4;
-            padding: 30px;
-            text-align: left;
-            line-height: 1.8;
-            white-space: pre-line;
-            box-shadow: 0px 4px 20px rgba(0,0,0,0.03);
-            border-radius: 8px;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            opacity: 0.6;
-        }
+        body { background-color: #f5f0ea; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .box { background: white; padding: 20px; border: 2px solid #333; max-width: 400px; width: 100%; box-shadow: 5px 5px 0px #333; }
+        img { width: 100%; border: 2px solid #333; margin-top: 15px; margin-bottom: 15px; }
     </style>
 </head>
 <body>
-
-    <!-- Audio Musik Latar balik (Ganti link .mp3 di bawah ini sesukamu) -->
-    <audio id="bg-music" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    </audio>
-
-    <!-- Halaman Interaktif Depan -->
-    <div id="overlay">
-        <div class="box-retro">
-            <h3>[ NOTIFIKASI SISTEM ]</h3>
-            <p>Web ini berisi surat kesan & pesan dari Syifa karena kita mau pisah kelas. Beneran kamu orangnya?</p>
-            <button onclick="mulaiWeb()">Iya, buka suratnya ✨</button>
-            <button id="btn-gajelas" onmouseover="hindari()" onclick="pikirLagi()">Bukan...</button>
-        </div>
-    </div>
-
-    <!-- Halaman Surat Utama -->
-    <div id="main-content">
+    <div class="box">
         <h1>Dear Sahabatku...</h1>
         
-        <div class="surat">
-            Hai! Nggak kerasa ya kita udah mau pisah kelas aja... 
-            
-            Makasih banyak ya udah mau jadi temen sekelas yang seru selama ini. Banyak banget momen-momen ketawa bareng, pusing mikirin tugas, sampai gibah receh pas jam kosong yang bakal bakal aku kangenin banget.
-            
-            [ TULIS KESAN PESAN PANJANG KAMU DI SINI NYAMBUNG KE BAWAH YA SYIF ]
-            
-            Meskipun nanti kita udah nggak sekelas lagi, jangan sombong-sombong ya kalau ketemu di koridor sekolah! Tetep sapa aku. Semoga di kelas yang baru nanti kamu dapet temen-temen yang seru juga dan makin sukses belajarnya.
-            
-            Keep in touch, ya!
-        </div>
+        <!-- GANTI DENGAN LINK FOTO KAMU -->
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=500" alt="Foto Kenangan">
 
-        <div class="footer">
-            Dibuat dengan segenap hati oleh Syifa ♡
-        </div>
+        <p>
+        Hai! Nggak kerasa ya kita udah mau pisah kelas aja...
+
+        Makasih banyak ya udah mau jadi temen sekelas yang seru selama ini. Banyak banget momen-momen ketawa bareng yang bakal aku kangenin banget.
+
+        Meskipun nanti kita udah nggak sekelas lagi, jangan sombong-sombong ya kalau ketemu di koridor sekolah! Tetep sapa aku. 
+
+        Keep in touch, ya!
+        </p>
     </div>
-
-    <script>
-        // Efek tombol menghindari kalau didekati (interaktif retro)
-        function hindari() {
-            const btn = document.getElementById('btn-gajelas');
-            const x = Math.random() * 80;
-            const y = Math.random() * 80;
-            btn.style.position = 'absolute';
-            btn.style.left = x + '%';
-            btn.style.top = y + '%';
-        }
-        
-        function pikirLagi() {
-            alert('Masa lupa sama nama sendiri? Coba klik tombol yang satunya deh! Haha.');
-        }
-
-        // Fungsi mengaktifkan musik & memunculkan surat (Aman buat iPhone)
-        function mulaiWeb() {
-            document.getElementById('overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            
-            // Putar musik secara aman setelah interaksi klik user
-            const musik = document.getElementById('bg-music');
-            musik.play().catch(error => {
-                console.log("Audio otomatis diblokir browser, tapi aman.");
-            });
-        }
-    </script>
 </body>
 </html>
